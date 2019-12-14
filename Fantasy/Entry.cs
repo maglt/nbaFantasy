@@ -11,7 +11,7 @@ namespace Fantasy
     public static class Entry
     {
 
-
+        
         public static void CreateNewUser(string userName, string email)
         {
             var dataAccess = new DataAccess();
@@ -63,8 +63,6 @@ namespace Fantasy
 
             List<Player> SortedPlayerList = playerList.OrderByDescending(o => o.Index).ToList();
 
-          //  SortedPlayerList.ForEach(i => Console.WriteLine($"{i.Id} {i.First_Name} {i.Last_Name} {i.Index}"));
-
             return SortedPlayerList;
         }
 
@@ -107,9 +105,9 @@ namespace Fantasy
         }
 
 
+
   
- 
-        public static void CalculateBestPlayerStats(List<Player> players, List<Team> teams, string startDate, string endDate)
+        public static List<DataTransferLibrary.Models.Game.RootObject> LoadStats(List<Player> players, List<Team> teams, string startDate, string endDate)
 
         {
             List<int> plList = new List<int>();
@@ -121,6 +119,14 @@ namespace Fantasy
 
             var gameData = LoadGameData(2018, plList, startDate, endDate);
 
+            CalculateBestStats(teams, gameData);
+
+            return gameData;
+
+        }
+
+        public static void CalculateBestStats(List<Team> teams, List<DataTransferLibrary.Models.Game.RootObject> gameData)
+        {
             List<PlayerStat> AllGamesByPlayer = new List<PlayerStat>();
 
             foreach (DataTransferLibrary.Models.Game.Datum d in gameData.SelectMany(g => g.data))
@@ -128,13 +134,8 @@ namespace Fantasy
                 AllGamesByPlayer.Add(new PlayerStat(d.player.id, d.pts, d.blk, d.stl, d.ast, d.reb, d.turnover, d.fg_pct, d.fg3_pct, d.ft_pct));
             }
 
-            var gamesByPlayer =
-            from player in AllGamesByPlayer
-            group player by player.player_id;
-
             //only the best game of the week
-            var bestGameByPlayer = gamesByPlayer.SelectMany(a => a.Where(b => b.WeeklyIndex == a.Max(c => c.WeeklyIndex)));
-
+            var bestGameByPlayer = AllGamesByPlayer.GroupBy(n => n.player_id).Select(g => g.OrderByDescending(x => x.initialIndex).FirstOrDefault());
 
             List<PlayerStat> BestGamesByPlayer = new List<PlayerStat>();
 
@@ -148,7 +149,9 @@ namespace Fantasy
             {
                 team.CalculatePlayerIndexes(BestGamesByPlayer);
             }
+
         }
+
 
 
 
