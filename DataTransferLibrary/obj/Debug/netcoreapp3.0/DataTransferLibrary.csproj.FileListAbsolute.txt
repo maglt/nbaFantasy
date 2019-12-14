@@ -12,3 +12,11 @@ C:\Users\S6879B\Desktop\NBA\nbaFantasy-master\nbaFantasy-master\DataTransferLibr
 C:\Users\S6879B\Desktop\NBA\nbaFantasy-master\nbaFantasy-master\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.AssemblyInfo.cs
 C:\Users\S6879B\Desktop\NBA\nbaFantasy-master\nbaFantasy-master\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.dll
 C:\Users\S6879B\Desktop\NBA\nbaFantasy-master\nbaFantasy-master\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.pdb
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\bin\Debug\netcoreapp3.0\DataTransferLibrary.deps.json
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\bin\Debug\netcoreapp3.0\DataTransferLibrary.dll
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\bin\Debug\netcoreapp3.0\DataTransferLibrary.pdb
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.csprojAssemblyReference.cache
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.AssemblyInfoInputs.cache
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.AssemblyInfo.cs
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.dll
+C:\Users\S6879B\source\repos\nbaFan\DataTransferLibrary\obj\Debug\netcoreapp3.0\DataTransferLibrary.pdb

@@ -112,8 +112,6 @@
 
                 Entry.CalculateBestStats(teams, gameData);
 
-                bool userHasTeams = false;
-
                 Console.WriteLine("Listing all teams:");
                 foreach (Team t in teams.OrderByDescending(x => x.TeamTotalIndex))
                 {
